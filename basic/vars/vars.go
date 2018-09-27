@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 // package internal variable
 var (
@@ -37,6 +40,44 @@ func variableShorter() {
 	fmt.Printf("a = %d, b = %d , c =%t, s = %s\n", a, b, c, s)
 }
 
+// calculate triangle
+func triangle() {
+	var a, b int = 3, 4
+	var c int
+	c = int(math.Sqrt(float64(a*a + a*b)))
+	fmt.Println(c)
+}
+
+// contants
+func contants() {
+	const (
+		filename = "abc.txt"
+		a, b     = 3, 4
+	)
+	var c int
+	c = int(math.Sqrt(a*b + b*b))
+	fmt.Printf("filename=%s, c=%d\n", filename, c)
+}
+
+// enums
+func enums() {
+	const (
+		golang = iota
+		java
+		python
+	)
+	const (
+		b = 1 << (10 * iota)
+		kb
+		mb
+		gb
+		tb
+		pb
+	)
+	fmt.Printf("golang=%d, java=%d, python=%d\n", golang, java, python)
+	fmt.Println(b, kb, mb, gb, tb, pb)
+}
+
 func main() {
 	fmt.Println("variableZeroValue:")
 	variableZeroValue()
@@ -48,4 +89,10 @@ func main() {
 	variableShorter()
 	fmt.Println("package internal variables: ")
 	fmt.Printf("%f, %t, %s\n", pi, flag, version)
+	fmt.Println("triangle:")
+	triangle()
+	fmt.Println("constants:")
+	contants()
+	fmt.Println("enums")
+	enums()
 }

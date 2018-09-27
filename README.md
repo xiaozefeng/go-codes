@@ -1,5 +1,2 @@
 # learning golang
-## builtin variable types
-- bool 
-- string
-- (u)int 
+#$ golang type conversion is displayed
