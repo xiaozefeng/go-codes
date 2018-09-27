@@ -22,11 +22,11 @@ func main() {
 	}
 
 	fmt.Println("invoke printArray")
-	printArray(arr3)
+	printArray(arr3[:])
 	fmt.Println(arr3)
 }
 
-func printArray(arr [6]int) {
+func printArray(arr []int) {
 	arr[0] = 100
 	for _, val := range arr {
 		fmt.Printf("%d ", val)
