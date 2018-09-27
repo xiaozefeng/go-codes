@@ -3,13 +3,16 @@ package main
 import (
 	"fmt"
 	"math"
+	"math/cmplx"
 )
 
 // package internal variable
 var (
-	pi      = 1.1314
-	version = "1.0"
-	flag    = false
+	pi                 = 1.1314
+	version            = "1.0"
+	flag               = false
+	maxInt  uint64     = 1<<64 - 1
+	z       complex128 = cmplx.Sqrt(-5 + 12i)
 )
 
 // variable zero value
@@ -89,6 +92,8 @@ func main() {
 	variableShorter()
 	fmt.Println("package internal variables: ")
 	fmt.Printf("%f, %t, %s\n", pi, flag, version)
+	fmt.Printf("Type: %T Value: %v\n", z, z)
+	fmt.Printf("Type: %T Value: %v\n", maxInt, maxInt)
 	fmt.Println("triangle:")
 	triangle()
 	fmt.Println("constants:")
