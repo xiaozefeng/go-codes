@@ -11,17 +11,20 @@ func main() {
 }
 
 func aboutTreeNode() {
-	root := tree.TreeNode{Val: 3}
-	root.Left = &tree.TreeNode{}
-	root.Right = &tree.TreeNode{5, nil, nil}
-	root.Right.Left = new(tree.TreeNode)
+	root := tree.Node{Val: 3}
+	root.Left = &tree.Node{}
+	root.Right = &tree.Node{5, nil, nil}
+	root.Right.Left = new(tree.Node)
 	root.Left.Right = tree.CreateNode(2)
-	fmt.Println(root)
+	root.Right.Left.SetValue(4)
+	fmt.Println()
+	fmt.Println("Node Traverse():")
+	root.Traverse()
+	fmt.Println()
 
-	nodes := []tree.TreeNode{
-		{3, nil, nil},
-		{5, nil, nil},
-		{7, nil, &root},
-	}
-	fmt.Println(nodes)
+	fmt.Println("root print")
+	root.Print()
+	root.SetValue(100)
+	root.Print()
+	fmt.Println()
 }
