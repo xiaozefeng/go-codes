@@ -3,15 +3,24 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"os"
 	"strconv"
+	"strings"
 )
 
 func main() {
 	fmt.Println(convertToBin(13))
 	fmt.Println(convertToBin(1))
 	printFile("basic/loop/loop.go")
+	fmt.Println()
+	fmt.Println("print str contens:")
+	str := `abc
+	bcd
+	fgh`
+	printContents(strings.NewReader(str))
 
+	fmt.Println()
 	fmt.Println("for:")
 	arr := make([]int, 10)
 	// for i
@@ -42,7 +51,11 @@ func printFile(filename string) {
 	if err != nil {
 		panic(err)
 	}
-	scanner := bufio.NewScanner(file)
+	printContents(file)
+}
+
+func printContents(reader io.Reader) {
+	scanner := bufio.NewScanner(reader)
 	for scanner.Scan() {
 		fmt.Println(scanner.Text())
 	}
