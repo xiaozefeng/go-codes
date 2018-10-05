@@ -1,6 +1,8 @@
 package pratice
 
-import "testing"
+import (
+	"testing"
+)
 
 func Test_lengthOfNonRepeatingSubStr(t *testing.T) {
 	type args struct {
@@ -22,5 +24,12 @@ func Test_lengthOfNonRepeatingSubStr(t *testing.T) {
 				t.Errorf("lengthOfNonRepeatingSubStr() = %v, want %v", got, tt.want)
 			}
 		})
+	}
+}
+
+func Benchmark_LengthOfNonRepeatingSubStr(b *testing.B) {
+	s := "吃饭了吗"
+	for i := 0; i < b.N; i++ {
+		lengthOfNonRepeatingSubStr(s)
 	}
 }
