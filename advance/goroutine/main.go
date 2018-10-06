@@ -6,13 +6,14 @@ import (
 )
 
 func main() {
+	go say("world")
+	say("hello")
 
-	for i := 0; i < 1000; i++ {
-		go func(i int ) {
-			for {
-				fmt.Printf("hello from goroutine: %d\n", i)
-			}
-		}(i)
+}
+
+func say(s string) {
+	for i := 0; i < 5; i++ {
+		time.Sleep(100 * time.Millisecond)
+		fmt.Println(s)
 	}
-	time.Sleep(time.Millisecond)
 }
