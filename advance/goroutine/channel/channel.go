@@ -126,7 +126,7 @@ func binaryTreeExercise() {
 		fmt.Printf("%d ", i)
 	}
 
-	fmt.Println()
+
 	result := same(&Tree{Val: 3}, &Tree{Val: 3})
 	fmt.Printf("eqauls result: %t", result)
 }
